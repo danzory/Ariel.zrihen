@@ -74,14 +74,11 @@
 
     <div class="max-w-3xl mx-auto p-4 sm:p-6">
         
-        <!-- Header / Profile Card -->
         <header class="bg-white rounded-3xl shadow-[0_8px_30px_rgb(0,0,0,0.04)] p-6 sm:p-8 mb-6 relative overflow-hidden border border-slate-100">
-            <!-- Decorative background elements -->
             <div class="absolute -top-16 -right-16 w-32 h-32 bg-gradient-to-br from-app-secondary to-app-primary rounded-full opacity-10 blur-2xl"></div>
             <div class="absolute -bottom-16 -left-16 w-40 h-40 bg-gradient-to-tr from-blue-400 to-emerald-400 rounded-full opacity-10 blur-2xl"></div>
             
             <div class="relative z-10 flex flex-col sm:flex-row items-center sm:items-start gap-6 text-center sm:text-right">
-                <!-- Avatar -->
                 <div class="relative">
                     <div class="w-28 h-28 rounded-full bg-gradient-to-tr from-app-primary to-app-secondary p-1 shadow-lg">
                         <div class="w-full h-full bg-white rounded-full flex items-center justify-center border-4 border-white overflow-hidden">
@@ -91,7 +88,6 @@
                     <div class="absolute bottom-1 left-1 bg-green-500 border-2 border-white w-5 h-5 rounded-full" title="פעיל"></div>
                 </div>
                 
-                <!-- Info -->
                 <div class="flex-1 mt-2">
                     <h1 class="text-3xl font-black text-slate-800 tracking-tight">אריאל זריהן</h1>
                     <p class="text-app-secondary font-semibold text-lg mt-1">חניך כוח ופיתוח גוף</p>
@@ -111,9 +107,7 @@
             </div>
         </header>
 
-        <!-- Navigation Tabs -->
         <nav class="mb-8 -mx-4 px-4 sm:mx-0 sm:px-0 relative">
-            <!-- Fade masks for scroll indication on mobile -->
             <div class="absolute right-0 top-0 bottom-0 w-4 bg-gradient-to-l from-[#f8fafc] to-transparent z-10 sm:hidden"></div>
             <div class="absolute left-0 top-0 bottom-0 w-8 bg-gradient-to-r from-[#f8fafc] to-transparent z-10 sm:hidden"></div>
             
@@ -136,12 +130,9 @@
             </div>
         </nav>
 
-        <!-- Tab Contents -->
         <main id="contentPanes" class="relative pb-10">
             
-            <!-- 1. Profile / Info Tab -->
             <div id="profileContent" class="tab-pane block animate-fade-in space-y-6">
-                <!-- Data Cards -->
                 <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
                     <div class="bg-white p-5 rounded-3xl shadow-sm border border-slate-100 flex flex-col items-center justify-center text-center">
                         <div class="w-10 h-10 bg-sky-50 rounded-full flex items-center justify-center mb-3 text-app-primary">
@@ -162,7 +153,7 @@
                             <i data-lucide="line-chart" class="w-5 h-5 graph-icon" data-exercise="bodyWeight" data-exercise-name="משקל גוף"></i>
                         </div>
                         <p class="text-sm text-slate-500 font-semibold">משקל עדכני</p>
-                        <p class="text-xl font-black text-blue-600 mt-1">71.6 ק"ג</p>
+                        <p id="currentBodyWeightUI" class="text-xl font-black text-blue-600 mt-1">71.6 ק"ג</p>
                         <span class="absolute bottom-2 text-[10px] text-slate-400 opacity-0 group-hover:opacity-100 transition">לחץ לגרף</span>
                     </div>
                     <div class="bg-white p-5 rounded-3xl shadow-sm border border-slate-100 flex flex-col items-center justify-center text-center">
@@ -174,7 +165,6 @@
                     </div>
                 </div>
 
-                <!-- Goals Section -->
                 <div class="bg-white rounded-3xl shadow-sm p-6 sm:p-8 border border-slate-100">
                     <h3 class="text-xl font-bold text-slate-800 mb-5 flex items-center gap-2">
                         <i data-lucide="target" class="text-app-secondary"></i> מטרות ויעדים
@@ -211,9 +201,7 @@
                 </div>
             </div>
 
-            <!-- 2. Progress / Goals Tab -->
             <div id="progressContent" class="tab-pane hidden animate-fade-in space-y-8">
-                <!-- Alerts -->
                 <div class="bg-sky-50 border-r-4 border-sky-500 p-5 rounded-2xl shadow-sm flex gap-4 items-start">
                     <i data-lucide="flame" class="text-sky-600 w-6 h-6 mt-0.5 shrink-0"></i>
                     <div class="w-full">
@@ -227,7 +215,6 @@
                     </div>
                 </div>
                 
-                <!-- Core Exercises -->
                 <div>
                     <h2 class="text-2xl font-black text-slate-800 mb-5">התקדמות בתרגילי ליבה</h2>
                     <div class="grid grid-cols-1 md:grid-cols-2 gap-5">
@@ -244,8 +231,8 @@
                                     <span class="font-semibold text-slate-700 bg-slate-100 px-3 py-1 rounded-lg">35 ק"ג x 8</span>
                                 </div>
                                 <div class="flex justify-between items-center">
-                                    <span class="font-bold text-emerald-600">שיא אישי (16.05)</span>
-                                    <span class="font-black text-lg text-emerald-600 bg-emerald-50 px-3 py-1 rounded-lg">100 ק"ג x 2</span>
+                                    <span class="font-bold text-emerald-600">שיא אישי</span>
+                                    <span id="squatPR_UI" class="font-black text-lg text-emerald-600 bg-emerald-50 px-3 py-1 rounded-lg">100 ק"ג x 2</span>
                                 </div>
                             </div>
                         </div>
@@ -262,8 +249,8 @@
                                     <span class="font-semibold text-slate-700 bg-slate-100 px-3 py-1 rounded-lg">30 ק"ג לצד</span>
                                 </div>
                                 <div class="flex justify-between items-center">
-                                    <span class="font-bold text-emerald-600">שיא אישי (17.04)</span>
-                                    <span class="font-black text-lg text-emerald-600 bg-emerald-50 px-3 py-1 rounded-lg">70 ק"ג x 6</span>
+                                    <span class="font-bold text-emerald-600">שיא אישי</span>
+                                    <span id="latPulldownPR_UI" class="font-black text-lg text-emerald-600 bg-emerald-50 px-3 py-1 rounded-lg">70 ק"ג x 6</span>
                                 </div>
                             </div>
                         </div>
@@ -280,8 +267,8 @@
                                     <span class="font-semibold text-slate-700 bg-slate-100 px-3 py-1 rounded-lg">-35 ק"ג x 8</span>
                                 </div>
                                 <div class="flex justify-between items-center">
-                                    <span class="font-bold text-emerald-600">שיא אישי (01.04)</span>
-                                    <span class="font-black text-lg text-emerald-600 bg-emerald-50 px-3 py-1 rounded-lg">+5 ק"ג x 5</span>
+                                    <span class="font-bold text-emerald-600">שיא אישי</span>
+                                    <span id="dipsPR_UI" class="font-black text-lg text-emerald-600 bg-emerald-50 px-3 py-1 rounded-lg">+5 ק"ג x 5</span>
                                 </div>
                             </div>
                         </div>
@@ -298,15 +285,14 @@
                                     <span class="font-semibold text-slate-700 bg-slate-100 px-3 py-1 rounded-lg">-</span>
                                 </div>
                                 <div class="flex justify-between items-center">
-                                    <span class="font-bold text-emerald-600">שיא אישי (16.05)</span>
-                                    <span class="font-black text-lg text-emerald-600 bg-emerald-50 px-3 py-1 rounded-lg">62.5 ק"ג x 2</span>
+                                    <span class="font-bold text-emerald-600">שיא אישי</span>
+                                    <span id="benchPressPR_UI" class="font-black text-lg text-emerald-600 bg-emerald-50 px-3 py-1 rounded-lg">62.5 ק"ג x 2</span>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
                 
-                <!-- Full Records Table -->
                 <div class="bg-white rounded-3xl shadow-sm border border-slate-100 overflow-hidden">
                     <div class="p-6 border-b border-slate-100 bg-slate-50 flex items-center justify-between">
                         <h2 class="text-xl font-bold text-slate-800">טבלת שיאים מלאה</h2>
@@ -369,9 +355,7 @@
                 </div>
             </div>
 
-            <!-- 3. Plans Tab -->
             <div id="plansContent" class="tab-pane hidden animate-fade-in space-y-6">
-                <!-- Training Tips -->
                 <div class="bg-gradient-to-r from-slate-900 to-slate-800 rounded-3xl p-6 shadow-md text-white mb-6">
                         <div class="flex gap-4 items-center mb-4">
                             <div class="p-3 bg-white/10 rounded-2xl backdrop-blur-sm">
@@ -387,7 +371,6 @@
                 </div>
 
                 <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-                    <!-- Workout A -->
                     <div class="bg-white rounded-3xl shadow-sm border border-slate-100 p-6">
                         <div class="flex items-center gap-3 mb-5 pb-4 border-b border-slate-100">
                             <div class="w-10 h-10 rounded-xl bg-blue-50 text-blue-500 flex items-center justify-center font-black text-xl">A</div>
@@ -424,7 +407,6 @@
                         </ul>
                     </div>
 
-                    <!-- Workout B -->
                     <div class="bg-white rounded-3xl shadow-sm border border-slate-100 p-6">
                         <div class="flex items-center gap-3 mb-5 pb-4 border-b border-slate-100">
                             <div class="w-10 h-10 rounded-xl bg-emerald-50 text-emerald-500 flex items-center justify-center font-black text-xl">B</div>
@@ -461,7 +443,6 @@
                         </ul>
                     </div>
 
-                    <!-- Workout C -->
                     <div class="bg-white rounded-3xl shadow-sm border border-slate-100 p-6">
                         <div class="flex items-center gap-3 mb-5 pb-4 border-b border-slate-100">
                             <div class="w-10 h-10 rounded-xl bg-purple-50 text-purple-500 flex items-center justify-center font-black text-xl">C</div>
@@ -500,9 +481,7 @@
                 </div>
             </div>
 
-            <!-- 4. Nutrition Tab -->
             <div id="nutritionContent" class="tab-pane hidden animate-fade-in space-y-6">
-                <!-- Macro Summary -->
                 <div class="bg-slate-900 rounded-3xl p-6 sm:p-8 text-center text-white shadow-xl relative overflow-hidden">
                     <div class="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjAiIGhlaWdodD0iMjAiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGNpcmNsZSBjeD0iMiIgY3k9IjIiIHI9IjIiIGZpbGw9IiNmZmYiIGZpbGwtb3BhY2l0eT0iMC4wNSIvPjwvc3ZnPg==')] opacity-50"></div>
                     <div class="relative z-10">
@@ -532,7 +511,6 @@
                     </div>
                 </div>
 
-                <!-- Meals Grid -->
                 <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
                     <div class="bg-white rounded-3xl p-6 shadow-sm border border-slate-100 relative pt-10">
                         <div class="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/2 bg-blue-50 text-blue-600 font-black px-4 py-1.5 rounded-full border border-blue-100 text-sm shadow-sm">~35ג' חלבון</div>
@@ -582,7 +560,6 @@
                 </div>
             </div>
 
-            <!-- 5. Cardio Tab -->
             <div id="cardioContent" class="tab-pane hidden animate-fade-in space-y-6">
                 <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
                     <div class="bg-white rounded-3xl shadow-sm border border-slate-100 p-6">
@@ -644,7 +621,6 @@
         
     </div>
 
-    <!-- Video Modal -->
     <div id="videoModal" class="fixed inset-0 bg-slate-900/60 backdrop-blur-sm flex items-center justify-center p-4 z-50 hidden opacity-0 transition-opacity">
         <div class="bg-white rounded-3xl shadow-2xl w-full max-w-lg p-6 transform scale-95 transition-transform">
             <div class="flex justify-between items-center mb-5 pb-3 border-b border-slate-100">
@@ -669,7 +645,7 @@
         // Initialize Icons
         lucide.createIcons();
 
-        // Preserved Data with New Updates
+        // Preserved Data
         const rawProgressData = {
             squat: [ {date: 'ND', weight: 35}, {date: '2/3', weight: 35}, {date: '3/3', weight: 47.5}, {date: '24.4', weight: 50}, {date: '28.4', weight: 55}, {date: '2.5', weight: 55}, {date: '7.5', weight: 60}, {date: '16.5', weight: 60}, {date: '19.5', weight: 60}, {date: '23.5', weight: 60}, {date: '26.5', weight: 62.5}, {date: '30.5', weight: 65}, {date: '3.6', weight: 60}, {date: '9.6', weight: 65}, {date: '27.6', weight: 60}, {date: '1.7', weight: 60}, {date: '3.7', weight: 60}, {date: '7.7', weight: 65}, {date: '20.7', weight: 55}, {date: '26.7', weight: 60}, {date: '1.8', weight: 63.5}, {date: '8.8', weight: 65}, {date: '14.8', weight: 65}, {date: '25.8', weight: 70}, {date: '1.9', weight: 70}, {date: '19.9', weight: 72.5}, {date: '26.9', weight: 75}, {date: '3.10', weight: 70}, {date: '25.10', weight: 72.5}, {date: '21.11', weight: 80}, {date: '24.1', weight: 85}, {date: '7.2', weight: 90}, {date: '10.04', weight: 90}, {date: '17.04', weight: 90}, {date: '16.05', weight: 100} ],
             benchPress: [ {date: '16.05', weight: 62.5} ],
@@ -681,20 +657,105 @@
         };
         
         const progressData = {};
-        for (const exerciseKey in rawProgressData) {
-            if (exerciseKey === 'bodyWeight') {
-                 progressData[exerciseKey] = rawProgressData[exerciseKey];
-            } else {
-                let maxWeight = -Infinity;
-                progressData[exerciseKey] = rawProgressData[exerciseKey].map(dataPoint => {
-                    if (dataPoint.weight > maxWeight) { maxWeight = dataPoint.weight; }
-                    return { ...dataPoint, weight: maxWeight };
-                });
-            }
-        }
-        
+
         document.addEventListener('DOMContentLoaded', () => {
             
+            // --- FIREBASE LIVE DATA LOGIC ---
+            const dbUrl = "https://trainer-2026-default-rtdb.europe-west1.firebasedatabase.app/clients/אריאל/workouts.json";
+            
+            // מילון תרגומים מעברית לאנגלית לפי מפתחות הקוד
+            const exerciseMap = {
+                "סקוואט": "squat",
+                "בנץ' פרס": "benchPress",
+                "לחיצת חזה": "benchPress",
+                "דדליפט רומני": "romanianDeadlift",
+                "פולי עליון": "latPulldown",
+                "מקבילים": "dips",
+                "פשיטות ברכיים": "legExtensions",
+                "משקל גוף": "bodyWeight",
+                "שקילה": "bodyWeight"
+            };
+
+            async function loadLiveData() {
+                try {
+                    const response = await fetch(dbUrl);
+                    const data = await response.json();
+
+                    if (data) {
+                        const workouts = Object.values(data);
+                        workouts.sort((a, b) => new Date(a.date) - new Date(b.date));
+
+                        workouts.forEach(workout => {
+                            const exName = workout.exercise.trim();
+                            const key = exerciseMap[exName] || exName;
+
+                            const d = new Date(workout.date);
+                            const dateStr = `${d.getDate()}/${d.getMonth()+1}`;
+
+                            if (!rawProgressData[key]) {
+                                rawProgressData[key] = [];
+                            }
+
+                            rawProgressData[key].push({
+                                date: dateStr,
+                                weight: workout.totalWeight,
+                                reps: workout.reps || 0
+                            });
+                        });
+                    }
+                } catch (error) {
+                    console.error("שגיאה במשיכת נתונים מהענן:", error);
+                }
+                
+                // בכל מקרה מריצים את בניית הנתונים לגרף (גם אם אין אינטרנט)
+                buildProgressData();
+            }
+
+            function buildProgressData() {
+                for (const exKey in rawProgressData) {
+                    if (exKey === 'bodyWeight') {
+                         progressData[exKey] = rawProgressData[exKey];
+                    } else {
+                        let maxWeight = -Infinity;
+                        progressData[exKey] = rawProgressData[exKey].map(dp => {
+                            if (dp.weight > maxWeight) { maxWeight = dp.weight; }
+                            return { ...dp, maxRecord: maxWeight }; 
+                        });
+                    }
+                }
+                updateUI();
+            }
+
+            function updateUI() {
+                // עדכון משקל גוף
+                if(rawProgressData.bodyWeight && rawProgressData.bodyWeight.length > 0) {
+                    const latestBW = rawProgressData.bodyWeight[rawProgressData.bodyWeight.length - 1];
+                    const el = document.getElementById('currentBodyWeightUI');
+                    if(el) el.innerText = `${latestBW.weight} ק"ג`;
+                }
+
+                // עדכון שיאים חזותיים
+                const prMappings = [
+                    { key: 'squat', id: 'squatPR_UI' },
+                    { key: 'latPulldown', id: 'latPulldownPR_UI' },
+                    { key: 'dips', id: 'dipsPR_UI' },
+                    { key: 'benchPress', id: 'benchPressPR_UI' }
+                ];
+
+                prMappings.forEach(pr => {
+                    if(rawProgressData[pr.key] && rawProgressData[pr.key].length > 0) {
+                        let maxEntry = rawProgressData[pr.key].reduce((max, curr) => (curr.weight > max.weight ? curr : max), rawProgressData[pr.key][0]);
+                        const el = document.getElementById(pr.id);
+                        if(el) {
+                            el.innerText = `${maxEntry.weight} ק"ג${maxEntry.reps ? ' x ' + maxEntry.reps : ''}`;
+                        }
+                    }
+                });
+            }
+
+            // הפעלת המשיכה עם עליית הדף
+            loadLiveData();
+
             // --- TAB LOGIC ---
             const tabs = document.querySelectorAll('.nav-tab');
             const panes = document.querySelectorAll('.tab-pane');
@@ -761,7 +822,20 @@
                                 x: { ticks: { font: {family: 'Assistant'} } }
                             },
                             plugins: {
-                                legend: { labels: { font: {family: 'Assistant', weight: 'bold'} } }
+                                legend: { labels: { font: {family: 'Assistant', weight: 'bold'} } },
+                                tooltip: {
+                                    callbacks: {
+                                        label: function(context) {
+                                            const entry = exerciseData[context.dataIndex];
+                                            if (exerciseKey === 'bodyWeight') {
+                                                return `משקל: ${entry.weight} ק"ג`;
+                                            }
+                                            let label = `באימון: ${entry.weight} ק"ג`;
+                                            if(entry.reps) label += ` x ${entry.reps}`;
+                                            return label;
+                                        }
+                                    }
+                                }
                             },
                             responsive: true,
                             maintainAspectRatio: true
@@ -783,8 +857,8 @@
                             data: {
                                 labels: exerciseData.map(d => d.date),
                                 datasets: [{
-                                    label: exerciseKey === 'bodyWeight' ? 'משקל גוף (ק"ג)' : 'משקל עבודה (ק"ג)',
-                                    data: exerciseData.map(d => d.weight),
+                                    label: exerciseKey === 'bodyWeight' ? 'משקל גוף (ק"ג)' : 'משקל שיא (ק"ג)',
+                                    data: exerciseData.map(d => exerciseKey === 'bodyWeight' ? d.weight : d.maxRecord),
                                     backgroundColor: bgColor,
                                     borderColor: chartColor,
                                     borderWidth: 3,
